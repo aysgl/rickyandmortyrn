@@ -13,6 +13,7 @@ import {ArrowLeft, ChartCircle, Man, Woman} from 'iconsax-react-native';
 export default function CharacterDetail({route, navigation}) {
   const {data} = route.params;
 
+  console.log(data);
   return (
     <ScrollView>
       <TouchableOpacity style={styles.btn} onPress={() => navigation.goBack()}>
@@ -62,18 +63,14 @@ export default function CharacterDetail({route, navigation}) {
       </View>
       <View style={styles.container}>
         <Text>Origin</Text>
-        <Text>{data.origin.name}</Text>
-        <TouchableOpacity>
-          <Text>{data.origin.url}</Text>
-        </TouchableOpacity>
+        <Text style={{marginBottom: 20}}>{data.origin.name}</Text>
 
         <Text>Location</Text>
         <Text>{data.location.name}</Text>
-        <Text>{data.location.url}</Text>
       </View>
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <Text>{data.episode}</Text>
-      </View>
+      </View> */}
     </ScrollView>
   );
 }

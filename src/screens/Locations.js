@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import {screenStyles} from '../utils/styles';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchLocations} from '../redux/locationSlice';
-import Card from '../components/Card';
+import LocationCard from '../components/LocationCard';
 
 export default function Locations() {
   const {locations, loading, error} = useSelector(state => state.locations);
@@ -13,7 +13,6 @@ export default function Locations() {
     dispatch(fetchLocations());
   }, [dispatch]);
 
-  console.log(locations);
   return (
     <View style={screenStyles.container}>
       {loading && <Text>Loading...</Text>}
@@ -21,7 +20,7 @@ export default function Locations() {
       <FlatList
         data={locations}
         numColumns={2}
-        renderItem={({item}) => <Card data={item} />}
+        renderItem={({item}) => <LocationCard data={item} />}
         columnWrapperStyle={styles.columnWrapper}
         contentContainerStyle={styles.container}
       />

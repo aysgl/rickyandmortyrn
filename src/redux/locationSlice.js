@@ -29,7 +29,6 @@ export const fetchLocations = () => async dispatch => {
   try {
     dispatch(locationsLoading());
     const res = await getRequest(LOCATIONS_URL);
-    console.log(res);
     dispatch(locationsSuccess(res.data.results));
   } catch (error) {
     dispatch(locationsError(error.message));

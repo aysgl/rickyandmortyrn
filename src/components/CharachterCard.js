@@ -3,9 +3,8 @@ import React from 'react';
 import {ChartCircle, Man, Woman} from 'iconsax-react-native';
 import {useNavigation} from '@react-navigation/native';
 
-export default function Card({data}) {
+export default function CharachterCard({data}) {
   const navigation = useNavigation();
-
   return (
     <TouchableOpacity
       style={styles.container}
